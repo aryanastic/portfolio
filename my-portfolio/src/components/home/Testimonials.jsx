@@ -10,7 +10,7 @@ const TestimonialsSection = () => {
     {
       id: 1,
       content: "Working with Aryan was an absolute pleasure. His attention to detail and creative problem-solving definately transforms the enviroment.",
-      author: "Mr Sarveshwar dahre",
+      author: "Mr Sarveshwar Dahre",
       position: "Phd Scholar, National Institude of Technology, Raipur",
       avatar: "/images/jd.jpeg",
       rating: 5
