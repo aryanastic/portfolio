@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const socialLinks = [
-  { icon: <FaLinkedin />, url: 'https://linkedin.com/in/your-profile', label: 'LinkedIn' },
-  { icon: <FaGithub />, url: 'https://github.com/your-profile', label: 'GitHub' },
-  { icon: <FaEnvelope />, url: 'mailto:your.email@example.com', label: 'Email' },
+  { icon: <FaLinkedin />, url: ' https://www.linkedin.com/in/aryanastic', label: 'LinkedIn' },
+  { icon: <FaGithub />, url: ' https://github.com/aryanastic', label: 'GitHub' },
+  { icon: <FaEnvelope />, url: 'mailto:aryanssharma85@gmail.com', label: 'Email' },
 ];
 
 const About = () => {
@@ -32,7 +32,7 @@ const About = () => {
           }}
         >
           <img
-            src="https://avatars.githubusercontent.com/u/9919?v=4"
+            src="/public/images/Screenshot 2025-05-21 222020.png"
             alt="Aryan Sharma"
             className="object-cover w-full h-full rounded-full"
           />

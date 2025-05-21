@@ -9,28 +9,45 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      content: "Working with Aryan was an absolute pleasure. His attention to detail and creative problem-solving transformed our project completely.",
-      author: "Alex Chen",
-      position: "CTO, TechVision",
-      avatar: "/api/placeholder/80/80",
+      content: "Working with Aryan was an absolute pleasure. His attention to detail and creative problem-solving definately transforms the enviroment.",
+      author: "Mr Sarveshwar dahre",
+      position: "Phd Scholar, National Institude of Technology, Raipur",
+      avatar: "/public/images/jd.jpeg",
       rating: 5
     },
     {
       id: 2,
       content: "Exceptional technical skills paired with an incredible design sense. Delivered our complex application ahead of schedule with features that exceeded our expectations.",
-      author: "Sarah Johnson",
-      position: "Product Manager, Innovate Inc.",
-      avatar: "/api/placeholder/80/80",
+      author: "Mr Altaf Raza",
+      position: "Full Stack developer, freelancer",
+      avatar: "/public/images/altaf.jpeg",
       rating: 5
     },
     {
       id: 3,
-      content: "A rare find in the development world - someone who understands both the technical requirements and business goals. The solution provided was elegant and scalable.",
-      author: "Michael Reeves",
-      position: "Founder, NextWave",
-      avatar: "/api/placeholder/80/80",
+      content: " Doing projects with Aryan has always been a delight, he's design language has always been exceptional.",
+      author: "Mr Adarsh Jha",
+      position: "AI | ML, People Strong- Gurugram",
+      avatar: "/public/images/Adarsh.jpeg",
+      rating: 5
+    }, 
+     {
+      id: 4,
+      content: " While pursuing MCA along with Aryan it was great to see he's dedication and leadership qualities during group projects ",
+      author: "Vinita Soni",
+      position: "MERN stack developer, App developer",
+      avatar: "/public/images/Vinita.jpeg",
+      rating: 5
+    },
+     {
+      id: 5,
+      content: " Aryan's creativity is always a plus point, he's descipline and dedication speak for themselves ",
+      author: " Mr. Deepesh Verma",
+      position: "Java full stack devloper",
+      avatar: "/public/images/Deepesh.jpeg",
       rating: 5
     }
+    
   ];
 
   // Intersection observer to trigger animations when section is in view
@@ -59,7 +76,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000);
+    }, 3000);
     
     return () => clearInterval(interval);
   }, [testimonials.length]);
