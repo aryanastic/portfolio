@@ -32,7 +32,7 @@ const About = () => {
           }}
         >
           <img
-            src="/public/images/Screenshot 2025-05-21 222020.png"
+            src="/images/Screenshot 2025-05-21 222020.png"
             alt="Aryan Sharma"
             className="object-cover w-full h-full rounded-full"
           />

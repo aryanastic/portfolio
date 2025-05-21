@@ -13,22 +13,22 @@ const contactMethods = [
   {
     icon: <FaEnvelope />,
     label: 'Email',
-    value: 'your.email@example.com',
-    link: 'mailto:your.email@example.com',
+    value: ' aryan97.wrok@gmail.com',
+    link: 'mailto:aryan97.wrok@gmail.com',
     color: '#61DBFB',
   },
   {
     icon: <FaLinkedin />,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/yourprofile',
-    link: 'https://linkedin.com/in/yourprofile',
+    value: ' https://www.linkedin.com/in/aryanastic',
+    link: ' https://www.linkedin.com/in/aryanastic',
     color: '#0A66C2',
   },
   {
     icon: <FaGithub />,
     label: 'GitHub',
-    value: 'github.com/yourusername',
-    link: 'https://github.com/yourusername',
+    value: ' https://github.com/aryanastic',
+    link: 'https://github.com/aryanastic',
     color: '#F0DB4F',
   },
   

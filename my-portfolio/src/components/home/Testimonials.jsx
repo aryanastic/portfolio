@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
       content: "Working with Aryan was an absolute pleasure. His attention to detail and creative problem-solving definately transforms the enviroment.",
       author: "Mr Sarveshwar dahre",
       position: "Phd Scholar, National Institude of Technology, Raipur",
-      avatar: "/public/images/jd.jpeg",
+      avatar: "/images/jd.jpeg",
       rating: 5
     },
     {
@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
       content: "Exceptional technical skills paired with an incredible design sense. Delivered our complex application ahead of schedule with features that exceeded our expectations.",
       author: "Mr Altaf Raza",
       position: "Full Stack developer, freelancer",
-      avatar: "/public/images/altaf.jpeg",
+      avatar: "/images/altaf.jpeg",
       rating: 5
     },
     {
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       content: " Doing projects with Aryan has always been a delight, he's design language has always been exceptional.",
       author: "Mr Adarsh Jha",
       position: "AI | ML, People Strong- Gurugram",
-      avatar: "/public/images/Adarsh.jpeg",
+      avatar: "/images/Adarsh.jpeg",
       rating: 5
     }, 
      {
@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
       content: " While pursuing MCA along with Aryan it was great to see he's dedication and leadership qualities during group projects ",
       author: "Vinita Soni",
       position: "MERN stack developer, App developer",
-      avatar: "/public/images/Vinita.jpeg",
+      avatar: "/images/Vinita.jpeg",
       rating: 5
     },
      {
@@ -44,7 +44,7 @@ const TestimonialsSection = () => {
       content: " Aryan's creativity is always a plus point, he's descipline and dedication speak for themselves ",
       author: " Mr. Deepesh Verma",
       position: "Java full stack devloper",
-      avatar: "/public/images/Deepesh.jpeg",
+      avatar: "/images/Deepesh.jpeg",
       rating: 5
     }
     
