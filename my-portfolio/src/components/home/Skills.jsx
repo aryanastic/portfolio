@@ -304,7 +304,7 @@ const Skills = () => {
             
             <AnimatePresence>
               <motion.p
-                className="text-center text-sm text-white bg-black bg-opacity-90 p-2 rounded-md absolute bottom-4 left-4 right-4 pointer-events-none backdrop-blur-sm border border-cyan-400/20"
+                className="hidden sm:block text-center text-sm text-white bg-black bg-opacity-90 p-2 rounded-md absolute bottom-4 left-4 right-4 pointer-events-none backdrop-blur-sm border border-cyan-400/20"
                 variants={descriptionVariants}
                 aria-hidden="true"
                 style={{
