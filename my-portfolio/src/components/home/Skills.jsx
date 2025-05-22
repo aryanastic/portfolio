@@ -1,5 +1,5 @@
- import React from 'react';
-import { motion } from 'framer-motion';
+ import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 import {
   FaReact,
@@ -79,7 +79,7 @@ const skills = [
     icon: <FaBootstrap />,
     name: 'Bootstrap',
     color: '#7952B3',
-    description: 'Responsive design with Bootstrap’s powerful grid and components.',
+    description: 'Responsive design with Bootstrap\'s powerful grid and components.',
   },
   {
     icon: <AiOutlineRobot />,
@@ -90,66 +90,246 @@ const skills = [
 ];
 
 const tileVariants = {
-  rest: { scale: 1, rotateX: 0, rotateY: 0, boxShadow: '0 5px 15px rgba(0,0,0,0.1)' },
+  rest: { 
+    scale: 1, 
+    rotateX: 0, 
+    rotateY: 0, 
+    boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+    z: 1
+  },
   hover: {
     scale: 1.15,
     rotateX: 15,
     rotateY: 15,
     boxShadow: '0 15px 30px rgba(0,255,255,0.6)',
+    z: 10,
     transition: { type: 'spring', stiffness: 300, damping: 20 },
   },
+  tap: {
+    scale: 1.1,
+    rotateX: 10,
+    rotateY: 10,
+    boxShadow: '0 10px 25px rgba(0,255,255,0.4)',
+    z: 10,
+    transition: { type: 'spring', stiffness: 400, damping: 25 },
+  }
 };
 
 const descriptionVariants = {
-  rest: { opacity: 0, y: 20 },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.15 } },
+  rest: { opacity: 0, y: 20, scale: 0.8 },
+  hover: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { duration: 0.3, delay: 0.15 } 
+  },
+  tap: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { duration: 0.2 } 
+  }
+};
+
+const iconVariants = {
+  rest: { scale: 1, rotate: 0 },
+  hover: { 
+    scale: 1.1, 
+    rotate: [0, -10, 10, 0],
+    transition: { 
+      scale: { duration: 0.2 },
+      rotate: { duration: 0.6, repeat: Infinity, repeatType: 'reverse' }
+    }
+  },
+  tap: { 
+    scale: 1.2, 
+    rotate: 360,
+    transition: { 
+      scale: { duration: 0.1 },
+      rotate: { duration: 0.5 }
+    }
+  }
+};
+
+// Section entrance animations
+const sectionVariants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.1,
+    }
+  }
+};
+
+const headerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.8,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    }
+  }
+};
+
+const gridVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.3,
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    scale: 0.8,
+    rotateX: -15,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    }
+  }
 };
 
 const Skills = () => {
+  const [activeCard, setActiveCard] = useState(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-100px 0px -100px 0px" 
+  });
+
   return (
-    <section
+    <motion.section
+      ref={ref}
       id="skills"
       className="min-h-screen bg-black text-white flex flex-col items-center justify-center py-24 px-8"
+      variants={sectionVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
     >
-      <h2 className="text-5xl font-orbitron font-bold text-cyan-400 mb-2 relative inline-block">
-        Tech Arsenal
-      </h2>
-      <p className="text-cyan-300 text-sm mb-16 font-light tracking-widest uppercase">
-        Tools I wield to build magic
-      </p>
+      <motion.div
+        className="text-center mb-16"
+        variants={headerVariants}
+      >
+        <motion.h2 
+          className="text-5xl font-bold text-cyan-400 mb-2 relative inline-block"
+          whileInView={{
+            textShadow: [
+              "0 0 0px #00ffff",
+              "0 0 10px #00ffff",
+              "0 0 20px #00ffff",
+              "0 0 10px #00ffff",
+              "0 0 0px #00ffff"
+            ]
+          }}
+          transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+        >
+          Tech Arsenal
+        </motion.h2>
+        <motion.p 
+          className="text-cyan-300 text-sm font-light tracking-widest uppercase"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          Tools I wield to build magic
+        </motion.p>
+      </motion.div>
 
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl w-full">
+      <motion.div 
+        className="grid grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl w-full"
+        variants={gridVariants}
+      >
         {skills.map(({ icon, name, color, description }, i) => (
           <motion.div
             key={i}
-            className="relative rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 cursor-pointer p-6 flex flex-col items-center justify-center shadow-lg outline-none"
+            className="relative rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 cursor-pointer p-6 flex flex-col items-center justify-center shadow-lg outline-none overflow-visible"
             style={{ perspective: 600 }}
             initial="rest"
             whileHover="hover"
-            animate="rest"
-            variants={tileVariants}
+            whileTap="tap"
+            animate={activeCard === i ? "tap" : "rest"}
+            variants={{
+              ...tileVariants,
+              ...cardVariants
+            }}
+            onTouchStart={() => setActiveCard(i)}
+            onTouchEnd={() => setTimeout(() => setActiveCard(null), 1000)}
+            onClick={() => {
+              setActiveCard(i);
+              setTimeout(() => setActiveCard(null), 1500);
+            }}
           >
             <motion.div
               style={{ color }}
               className="text-6xl mb-3 pointer-events-none"
               aria-label={name}
+              variants={iconVariants}
             >
               {icon}
             </motion.div>
             <motion.h3 className="text-xl font-semibold mb-1 pointer-events-none" style={{ color }}>
               {name}
             </motion.h3>
-            <motion.p
-              className="text-center text-sm text-white bg-black bg-opacity-80 p-2 rounded-md absolute bottom-4 left-4 right-4 pointer-events-none"
-              variants={descriptionVariants}
-              aria-hidden="true"
-            >
-              {description}
-            </motion.p>
+            
+            <AnimatePresence>
+              <motion.p
+                className="text-center text-sm text-white bg-black bg-opacity-90 p-2 rounded-md absolute bottom-4 left-4 right-4 pointer-events-none backdrop-blur-sm border border-cyan-400/20"
+                variants={descriptionVariants}
+                aria-hidden="true"
+                style={{
+                  boxShadow: `0 0 10px ${color}20`
+                }}
+              >
+                {description}
+              </motion.p>
+            </AnimatePresence>
           </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+      
+      {/* Mobile instructions */}
+      <motion.div 
+        className="mt-12 text-center md:hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
+      >
+        <p className="text-cyan-300/60 text-sm">
+          Tap cards to see details
+        </p>
+      </motion.div>
+    </motion.section>
   );
 };
 

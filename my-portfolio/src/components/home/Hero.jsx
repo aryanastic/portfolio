@@ -44,6 +44,7 @@ const OrbitingIcons = () => {
                 fontSize: '2rem',
                 filter: `drop-shadow(0 0 4px ${color})`,
                 transition: 'transform 0.2s',
+                pointerEvents: 'none',
               }}
               className="hover:scale-125"
             >
@@ -86,8 +87,7 @@ const Hero = () => {
       <div className="md:w-1/2 space-y-8">
         <h1 className="text-6xl md:text-7xl font-extrabold font-orbitron leading-tight tracking-tight">
           Hi, I'm <br />
-          <span className="text-cyan-400   
-">Aryan Sharma</span>
+          <span className="text-cyan-400">Aryan Sharma</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 italic leading-relaxed">
@@ -120,7 +120,6 @@ const Hero = () => {
           <pointLight position={[10, 10, 10]} color="#00ffff" intensity={2} />
           <GlowingSphere />
           <OrbitingIcons />
-          <OrbitControls enableZoom={false} />
         </Canvas>
       </div>
 

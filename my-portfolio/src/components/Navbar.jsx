@@ -4,7 +4,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('projects');
 
   // Handle scroll to show/hide navbar
   useEffect(() => {
@@ -17,7 +17,7 @@ const Navbar = () => {
       setLastScrollY(window.scrollY);
       
       // Determine active section based on scroll position
-      const sections = ['home', 'projects', 'about', 'testimonials', 'contact'];
+      const sections = ['projects', 'about', 'testimonials', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -44,6 +44,12 @@ const Navbar = () => {
     setActiveSection(id);
   };
 
+  // Scroll to top function for logo
+  const scrollToTop = () => {
+    setIsOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div>
       <nav
@@ -54,7 +60,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <button onClick={() => handleScrollTo('home')} className="font-orbitron text-xl font-bold tracking-tight">
+            <button onClick={scrollToTop} className="font-orbitron text-xl font-bold tracking-tight">
               <span className="text-cyan-400">Aryan</span> Sharma
             </button>
           </div>
@@ -79,16 +85,6 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <ul className="hidden md:flex space-x-10 font-medium text-lg mx-auto">
-            <li>
-              <button 
-                onClick={() => handleScrollTo('home')} 
-                className={`hover:text-cyan-400 transition duration-300 py-1 ${
-                  activeSection === 'home' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
-                }`}
-              >
-                Home
-              </button>
-            </li>
             <li>
               <button 
                 onClick={() => handleScrollTo('projects')} 
@@ -149,14 +145,6 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden px-6 pb-6 pt-2 flex flex-col space-y-4 bg-black text-white border-t border-gray-800">
-            <button 
-              onClick={() => handleScrollTo('home')}
-              className={`py-2 text-left hover:text-cyan-400 transition duration-300 ${
-                activeSection === 'home' ? 'text-cyan-400' : ''
-              }`}
-            >
-              Home
-            </button>
             <button 
               onClick={() => handleScrollTo('projects')}
               className={`py-2 text-left hover:text-cyan-400 transition duration-300 ${
