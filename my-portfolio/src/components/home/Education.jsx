@@ -1,6 +1,6 @@
  import React, { useState, useEffect, useRef } from 'react';
 
-// Sample education data - replace with your own
+ 
 const educationData = [
   {
     id: 1,
@@ -9,7 +9,7 @@ const educationData = [
     institution: 'Central University GGV',
     location: 'Bilaspur, Chhattisgarh',
     duration: '2023 - 2025',
-    gpa: '7.9/10.0',
+    gpa: '7.8',
     description: 'Focused on software development with a specialization in web technologies. Active member of the university coding club and participated in multiple hackathons.',
     courses: ['Data Structures & Algorithms', 'Web Development', 'Database Management', 'Machine Learning'],
     achievements: [
@@ -17,7 +17,7 @@ const educationData = [
       'participated in all the technical events (2023)',
       'Showcased leadership and teamwork in multiple group projects'
     ],
-    logoSrc: '/public/images/GGV-logo.png' // Replace with your actual logo path
+    logoSrc: 'images/GGV-logo.png' 
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const educationData = [
       'Gaining a NCC B certificate',
       'Developed a Parking management system as final project'
     ],
-    logoSrc: '/public/images/Newlogofooter.jpg' // Replace with your actual logo path
+    logoSrc: 'images/Newlogofooter.jpg'  
   }
 ];
 
@@ -76,7 +76,7 @@ const EducationItem = ({ education, index, isLast }) => {
     };
   }, []);
 
-  // Handle logo image loading errors
+  
   const handleLogoError = () => {
     setLogoError(true);
   };

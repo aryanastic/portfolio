@@ -32,7 +32,7 @@ const projectsData = [
   },
 ];
 
-// Component for each project with fade-in animation
+ 
 const ProjectItem = ({ project, index }) => {
   const [isVisible, setIsVisible] = useState(false);
   const projectRef = useRef(null);
@@ -47,7 +47,7 @@ const ProjectItem = ({ project, index }) => {
         }
       },
       {
-        threshold: 0.2, // Trigger when 20% of the element is visible
+        threshold: 0.2,  
       }
     );
 
@@ -62,7 +62,7 @@ const ProjectItem = ({ project, index }) => {
     };
   }, []);
 
-  // Alternate layout: even-indexed projects have image on right
+  
   const isEven = index % 2 === 0;
 
   return (
