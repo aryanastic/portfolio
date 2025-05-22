@@ -326,7 +326,7 @@ const Skills = () => {
         transition={{ delay: 1.5, duration: 0.6 }}
       >
         <p className="text-cyan-300/60 text-sm">
-          Tap cards to see details
+          Tap cards to interact
         </p>
       </motion.div>
     </motion.section>
