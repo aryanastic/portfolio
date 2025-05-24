@@ -151,7 +151,6 @@ const iconVariants = {
   }
 };
 
-// Section entrance animations
 const sectionVariants = {
   hidden: {
     opacity: 0,
@@ -292,7 +291,7 @@ const Skills = () => {
           >
             <motion.div
               style={{ color }}
-              className="text-6xl mb-3 pointer-events-none"
+              className="text-5xl sm:text-6xl mb-3 pointer-events-none"
               aria-label={name}
               variants={iconVariants}
             >
@@ -301,7 +300,6 @@ const Skills = () => {
             <motion.h3 className="text-xl font-semibold mb-1 pointer-events-none" style={{ color }}>
               {name}
             </motion.h3>
-            
             <AnimatePresence>
               <motion.p
                 className="hidden sm:block text-center text-sm text-white bg-black bg-opacity-90 p-2 rounded-md absolute bottom-4 left-4 right-4 pointer-events-none backdrop-blur-sm border border-cyan-400/20"
@@ -317,8 +315,7 @@ const Skills = () => {
           </motion.div>
         ))}
       </motion.div>
-      
-      {/* Mobile instructions */}
+
       <motion.div 
         className="mt-12 text-center md:hidden"
         initial={{ opacity: 0, y: 20 }}
@@ -326,7 +323,7 @@ const Skills = () => {
         transition={{ delay: 1.5, duration: 0.6 }}
       >
         <p className="text-cyan-300/60 text-sm">
-          Tap cards to interact
+          Tap cards to see details
         </p>
       </motion.div>
     </motion.section>
