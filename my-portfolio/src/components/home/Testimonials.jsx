@@ -49,7 +49,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 6,
-      content: " Having Aryan in the team has always been huge advantage. ",
+      content: " Having Aryan in the team has always been a huge advantage, love collaborating with him. ",
       author: " Mr. Saurabh Jha",
       position: "Data Science | TCS",
       avatar: "/images/WhatsApp Image 2025-05-23 at 1.02.02 PM.jpeg",
