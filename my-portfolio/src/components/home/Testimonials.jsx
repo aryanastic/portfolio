@@ -46,6 +46,14 @@ const TestimonialsSection = () => {
       position: "Java full stack devloper",
       avatar: "/images/Deepesh.jpeg",
       rating: 5
+    },
+    {
+      id: 6,
+      content: " Having Aryan in the team has always been huge advantage. ",
+      author: " Mr. Saurabh Jha",
+      position: "Data Science | TCS",
+      avatar: "/images/WhatsApp Image 2025-05-23 at 1.02.02 PM.jpeg",
+      rating: 5
     }
     
   ];
