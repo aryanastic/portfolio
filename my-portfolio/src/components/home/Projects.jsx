@@ -9,8 +9,8 @@ const projectsData = [
     description: 'HealthAdvisor.AI is a responsive web application built with the MERN stack (MongoDB, Express.js, React, Node.js) designed to provide personalized health advice based on user symptoms. It features secure user authentication for a personalized experience and integrates Gemini AI to deliver intelligent, real-time health recommendations. The app is fully responsive, ensuring smooth usability across all devices.',
     image: '/images/Untitled design.png',
     tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
+    liveUrl: 'https://healthadvisor-ai-qk42.onrender.com/',
+    githubUrl: 'https://github.com/aryanastic/HealthAdvisor-ai',
   },
   {
     id: 2,
